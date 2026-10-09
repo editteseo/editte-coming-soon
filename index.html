@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editte — Designer & Partner Invitations</title>
+  
+  <!-- Typography per Brand Guidelines: Goudy Old Style alternative + Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Brand Color Hierarchy */
+      --color-salt: #FAF5F0;
+      --color-cacao: #3B1314;
+      --color-cacao-muted: #5B282E;
+      --color-sage: #B4AD64;
+      --color-sand: #EFE1C0;
+      --color-white: #FFFFFF;
+      
+      --font-serif: 'Goudy Bookletter 1911', 'Goudy Old Style', Georgia, serif;
+      --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-salt);
+      color: var(--color-cacao);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* Header & Brandmark */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(59, 19, 20, 0.12);
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      color: var(--color-cacao);
+      text-transform: lowercase;
+      font-weight: normal;
+    }
+
+    .badge-status {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--color-sand);
+      color: var(--color-cacao);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-sage);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 4.5vw, 3.4rem);
+      line-height: 1.25;
+      font-weight: normal;
+      color: var(--color-cacao);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Value Pillars for Designers */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 3.5rem;
+    }
+
+    .pillar-card {
+      background: var(--color-white);
+      border: 1px solid rgba(59, 19, 20, 0.08);
+      padding: 1.8rem;
+      border-top: 3px solid var(--color-sage);
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-cacao);
+      margin-bottom: 0.5rem;
+      font-weight: normal;
+    }
+
+    .pillar-card p {
+      font-size: 0.85rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* Direct Application Section */
+    .form-wrapper {
+      background: var(--color-white);
+      border: 1px solid rgba(59, 19, 20, 0.1);
+      padding: 2.5rem;
+      border-radius: 2px;
+      box-shadow: 0 4px 25px rgba(59, 19, 20, 0.03);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--color-cacao);
+      font-weight: normal;
+    }
+
+    .form-header p {
+      font-size: 0.9rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+    }
+
+    .grid-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-form {
+        grid-template-columns: 1fr;
+      }
+      .form-wrapper {
+        padding: 1.5rem;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--color-cacao);
+    }
+
+    input, textarea, select {
+      padding: 0.8rem;
+      border: 1px solid rgba(59, 19, 20, 0.2);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      background: var(--color-salt);
+      color: var(--color-cacao);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--color-sage);
+      background: #FFFFFF;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border: none;
+      padding: 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(59, 19, 20, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--color-cacao-muted);
+    }
+
+    footer a {
+      color: var(--color-cacao);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand-logo">editte</div>
+      <div class="badge-status">Curation Underway</div>
+    </header>
+
+    <section class="hero">
+      <span class="hero-eyebrow">Invitation for Designers & Brands</span>
+      <h1>Where Style Becomes Personal</h1>
+      <p>
+        Editte is building a multi-vendor platform dedicated to design-led jewellery and distinct lifestyle pieces. We are actively inviting independent jewellery designers and studios to join our debut roster.
+      </p>
+    </section>
+
+    <!-- Why Partner With Editte -->
+    <section class="pillars">
+      <div class="pillar-card">
+        <h3>Design-First Discovery</h3>
+        <p>A clutter-free, elevated marketplace that respects your brand story and places your craftsmanship front and center.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Multi-Vendor Support</h3>
+        <p>Seamless catalog onboarding, transparent order management, and multi-channel marketing campaigns.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Intentional Audience</h3>
+        <p>Direct exposure to an audience seeking personal, expressive, and quality everyday-to-occasion pieces.</p>
+      </div>
+    </section>
+
+    <!-- Direct Onboarding / Inquiry Form -->
+    <section class="form-wrapper">
+      <div class="form-header">
+        <h2>Submit Your Brand for Review</h2>
+        <p>Tell us about your label. Our curation team reviews submissions within 48 hours.</p>
+      </div>
+
+      <!-- Replace action with your Formspree, Basin, or Google Forms endpoint -->
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="grid-form">
+        <div class="form-group">
+          <label for="brandName">Brand / Studio Name *</label>
+          <input type="text" id="brandName" name="brandName" required placeholder="e.g. Atelier Studio" />
+        </div>
+
+        <div class="form-group">
+          <label for="designerName">Contact Person *</label>
+          <input type="text" id="designerName" name="designerName" required placeholder="Full Name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Work Email *</label>
+          <input type="email" id="email" name="email" required placeholder="hello@yourbrand.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="instagram">Instagram Handle *</label>
+          <input type="text" id="instagram" name="instagram" required placeholder="@yourbrand" />
+        </div>
+
+        <div class="form-group">
+          <label for="catalogLink">Lookbook / Catalog / Website URL</label>
+          <input type="url" id="catalogLink" name="catalogLink" placeholder="https://" />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Primary Focus *</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="demi-fine">Demi-Fine Jewellery</option>
+            <option value="fashion">Contemporary Fashion Jewellery</option>
+            <option value="statement">Occasion & Statement Pieces</option>
+            <option value="accessories">Bags & Curated Accessories</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="notes">Brief Brand Note / Tell Us What Makes Your Pieces Unique</label>
+          <textarea id="notes" name="notes" placeholder="Materials used, design philosophy, price tier..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Partnership Inquiry</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Direct Designer Relations: <a href="mailto:partnerships@editte.com">partnerships@editte.com</a></p>
+      <p>Follow our build process on Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">@editte</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
