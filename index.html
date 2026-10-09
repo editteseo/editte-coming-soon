@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editte — Designer & Partner Invitations</title>
+  <title>Editte — Launching Soon | Designer & Partner Inquiries</title>
   
-  <!-- Typography per Brand Guidelines: Goudy Old Style alternative + Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Brand Color Hierarchy */
       --color-salt: #FAF5F0;
       --color-cacao: #3B1314;
       --color-cacao-muted: #5B282E;
       --color-sage: #B4AD64;
+      --color-sage-light: #DCD39C;
       --color-sand: #EFE1C0;
       --color-white: #FFFFFF;
+      --color-gold: #C08429;
       
-      --font-serif: 'Goudy Bookletter 1911', 'Goudy Old Style', Georgia, serif;
+      --font-serif: 'Cormorant Garamond', 'Goudy Old Style', Georgia, serif;
       --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
@@ -36,132 +36,352 @@
       font-family: var(--font-sans);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* Container */
+    /* Ambient Architectural Border */
+    .architectural-frame {
+      position: fixed;
+      inset: 12px;
+      border: 1px solid rgba(180, 173, 100, 0.28);
+      pointer-events: none;
+      z-index: 99;
+    }
+
     .container {
-      max-width: 920px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      padding: 2.5rem 1.5rem 4rem;
+      position: relative;
     }
 
-    /* Header & Brandmark */
+    /* Header & Exact SVG Brandmark */
     header {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(59, 19, 20, 0.12);
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(59, 19, 20, 0.08);
+      text-align: center;
     }
 
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      letter-spacing: 0.12em;
-      color: var(--color-cacao);
-      text-transform: lowercase;
-      font-weight: normal;
+    .brand-svg-container {
+      width: 190px;
+      max-width: 70vw;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand-svg-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      fill: var(--color-cacao);
     }
 
     .badge-status {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       background: var(--color-sand);
       color: var(--color-cacao);
-      padding: 0.35rem 0.85rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 999px;
       font-weight: 600;
+      display: inline-block;
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      padding: 4rem 0 3rem;
+      padding: 4.5rem 0 3.5rem;
       text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
     .hero-eyebrow {
       font-size: 0.8rem;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--color-sage);
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       display: block;
     }
 
     h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.3rem, 4.5vw, 3.4rem);
-      line-height: 1.25;
-      font-weight: normal;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      line-height: 1.15;
+      font-weight: 400;
       color: var(--color-cacao);
       margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--color-cacao-muted);
     }
 
     .hero p {
-      font-size: 1.05rem;
+      font-size: 1.12rem;
       color: var(--color-cacao-muted);
       font-weight: 300;
-      max-width: 620px;
-      margin: 0 auto;
+      line-height: 1.75;
+      max-width: 660px;
+      margin: 0 auto 2.5rem;
     }
 
-    /* Value Pillars for Designers */
+    /* Quick Action CTA Buttons */
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-anchor {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.9rem 1.75rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    .btn-anchor-primary {
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border: 1px solid var(--color-cacao);
+    }
+
+    .btn-anchor-primary:hover {
+      background: var(--color-sage);
+      border-color: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
+    .btn-anchor-secondary {
+      background: transparent;
+      color: var(--color-cacao);
+      border: 1px solid var(--color-cacao);
+    }
+
+    .btn-anchor-secondary:hover {
+      background: var(--color-sand);
+    }
+
+    /* Carousel Section */
+    .carousel-section {
+      margin: 4.5rem 0 5rem;
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(59, 19, 20, 0.1);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 400;
+      color: var(--color-cacao);
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-sage);
+      font-weight: 600;
+    }
+
+    .carousel-nav-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(59, 19, 20, 0.2);
+      background: transparent;
+      color: var(--color-cacao);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border-color: var(--color-cacao);
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 1rem;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-card {
+      flex: 0 0 calc(33.333% - 1rem);
+      min-width: 260px;
+      scroll-snap-align: start;
+      background: var(--color-white);
+      border: 1px solid rgba(59, 19, 20, 0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(59, 19, 20, 0.07);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #F3ECE4;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .card-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(250, 245, 240, 0.92);
+      backdrop-filter: blur(4px);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      color: var(--color-cacao);
+    }
+
+    .card-info {
+      padding: 1.25rem 1.25rem 1.5rem;
+      border-top: 1px solid rgba(59, 19, 20, 0.05);
+    }
+
+    .card-category {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-sage);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--color-cacao);
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-caption {
+      font-size: 0.8rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+    }
+
+    /* Pillars */
     .pillars {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin: 2rem 0 3.5rem;
+      margin: 4.5rem 0;
     }
 
     .pillar-card {
       background: var(--color-white);
       border: 1px solid rgba(59, 19, 20, 0.08);
-      padding: 1.8rem;
+      padding: 2.2rem 1.75rem;
       border-top: 3px solid var(--color-sage);
+      position: relative;
     }
 
     .pillar-card h3 {
       font-family: var(--font-serif);
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: var(--color-cacao);
-      margin-bottom: 0.5rem;
-      font-weight: normal;
+      margin-bottom: 0.6rem;
+      font-weight: 400;
     }
 
     .pillar-card p {
       font-size: 0.85rem;
       color: var(--color-cacao-muted);
       font-weight: 300;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* Direct Application Section */
+    /* Dual Application Sections */
+    .dual-sections {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Designer Onboarding Form */
     .form-wrapper {
       background: var(--color-white);
       border: 1px solid rgba(59, 19, 20, 0.1);
-      padding: 2.5rem;
-      border-radius: 2px;
-      box-shadow: 0 4px 25px rgba(59, 19, 20, 0.03);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 6px 30px rgba(59, 19, 20, 0.03);
     }
 
     .form-header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
     }
 
     .form-header h2 {
       font-family: var(--font-serif);
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       color: var(--color-cacao);
-      font-weight: normal;
+      font-weight: 400;
+      margin-bottom: 0.35rem;
     }
 
     .form-header p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--color-cacao-muted);
       font-weight: 300;
     }
@@ -169,15 +389,15 @@
     .grid-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
+      gap: 1.25rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .grid-form {
         grid-template-columns: 1fr;
       }
       .form-wrapper {
-        padding: 1.5rem;
+        padding: 2rem 1.25rem;
       }
     }
 
@@ -191,34 +411,35 @@
     }
 
     label {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       font-weight: 600;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
       color: var(--color-cacao);
     }
 
     input, textarea, select {
-      padding: 0.8rem;
+      padding: 0.85rem;
       border: 1px solid rgba(59, 19, 20, 0.2);
-      border-radius: 2px;
+      border-radius: 0px;
       font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       background: var(--color-salt);
       color: var(--color-cacao);
       outline: none;
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     input:focus, textarea:focus, select:focus {
       border-color: var(--color-sage);
       background: #FFFFFF;
+      box-shadow: 0 0 0 2px rgba(180, 173, 100, 0.18);
     }
 
     textarea {
       resize: vertical;
-      min-height: 90px;
+      min-height: 95px;
     }
 
     .submit-btn {
@@ -226,9 +447,9 @@
       background: var(--color-cacao);
       color: var(--color-salt);
       border: none;
-      padding: 1rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
+      padding: 1.1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       font-weight: 600;
       cursor: pointer;
@@ -241,17 +462,80 @@
       color: var(--color-cacao);
     }
 
+    /* Customer Waitlist Strip */
+    .waitlist-strip {
+      background: var(--color-sand);
+      border: 1px solid rgba(180, 173, 100, 0.4);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    .waitlist-strip h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--color-cacao);
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .waitlist-strip p {
+      font-size: 0.9rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .waitlist-form {
+      display: flex;
+      max-width: 440px;
+      margin: 0 auto;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 500px) {
+      .waitlist-form {
+        flex-direction: column;
+      }
+    }
+
+    .waitlist-form input {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid rgba(59, 19, 20, 0.2);
+    }
+
+    .waitlist-form button {
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border: none;
+      padding: 0 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      height: 44px;
+    }
+
+    .waitlist-form button:hover {
+      background: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
     /* Footer */
     footer {
-      margin-top: 4rem;
+      margin-top: 5rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(59, 19, 20, 0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.75rem;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--color-cacao-muted);
+      text-align: center;
     }
 
     footer a {
@@ -267,58 +551,155 @@
 </head>
 <body>
 
+  <div class="architectural-frame"></div>
+
   <div class="container">
+    <!-- Header with Official Brand Logo Mark and Wordmark -->
     <header>
-      <div class="brand-logo">editte</div>
-      <div class="badge-status">Curation Underway</div>
+      <div class="brand-svg-container" title="Editte Logo">
+        <svg viewBox="0 0 540 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Inverted Monogram 'e' -->
+          <path d="M 270 20 C 310 20 338 42 334 78 C 330 114 286 118 246 118 C 236 118 232 118 230 118 C 232 94 246 72 272 72 C 298 72 308 84 316 84 C 322 84 326 78 326 72 C 326 44 290 32 260 32 C 220 32 198 58 198 90 C 198 126 230 148 280 148 C 330 148 352 118 352 74 C 352 32 316 12 270 12 C 240 12 216 22 204 36 L 214 46 C 224 34 244 20 270 20 Z" />
+          <!-- Wordmark: editte -->
+          <text x="270" y="275" text-anchor="middle" font-family="'Cormorant Garamond', 'Goudy Old Style', Georgia, serif" font-size="110" letter-spacing="10">editte</text>
+        </svg>
+      </div>
+      <div class="badge-status">Opening Soon &bull; Curated Discovery</div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-      <span class="hero-eyebrow">Invitation for Designers & Brands</span>
-      <h1>Where Style Becomes Personal</h1>
+      <span class="hero-eyebrow">A Distinct Multi-Vendor Destination</span>
+      <h1>Where Style <em>Becomes Personal.</em></h1>
       <p>
-        Editte is building a multi-vendor platform dedicated to design-led jewellery and distinct lifestyle pieces. We are actively inviting independent jewellery designers and studios to join our debut roster.
+        Editte is currently crafting an elevated, design-led marketplace for contemporary jewellery, accessories, and emerging studio labels. Discover everyday staples to occasion pieces chosen with intention.
       </p>
+
+      <div class="hero-ctas">
+        <a href="#designer-application" class="btn-anchor btn-anchor-primary">Partner With Us &rarr;</a>
+        <a href="#early-access" class="btn-anchor btn-anchor-secondary">Join VIP Access</a>
+      </div>
     </section>
 
-    <!-- Why Partner With Editte -->
+    <!-- Interactive Curated Showcase Carousel -->
+    <section class="carousel-section">
+      <div class="section-header-row">
+        <div>
+          <span class="section-subtitle">Curated Preview</span>
+          <h2 class="section-title">Pieces Made To Belong</h2>
+        </div>
+        <div class="carousel-nav-buttons">
+          <button class="nav-btn" onclick="slideCarousel(-1)" aria-label="Previous">&larr;</button>
+          <button class="nav-btn" onclick="slideCarousel(1)" aria-label="Next">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="carousel-track" id="jewelCarousel">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Demi-Fine</span>
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Sculptural Solitaire Pendant" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <span class="card-category">Pendants & Necklaces</span>
+            <h4 class="card-title">Solitaire Stone Drop</h4>
+            <p class="card-caption">Intentional lines crafted for effortless everyday layering.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Studio Edition</span>
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Textured Gold Stacking Rings" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <span class="card-category">Rings & Bands</span>
+            <h4 class="card-title">The Braided Band</h4>
+            <p class="card-caption">Subtle texture and quietly bold symmetry in warm gold tone.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Contemporary</span>
+            <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=800&q=80" alt="Curved Drop Earrings" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <span class="card-category">Earrings</span>
+            <h4 class="card-title">Sculpted Arc Hoops</h4>
+            <p class="card-caption">Light-catching silhouettes designed to elevate occasion wear.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Handcrafted</span>
+            <img src="https://images.unsplash.com/photo-1611591475879-1100f7823f05?auto=format&fit=crop&w=800&q=80" alt="Statement Chain Choker" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <span class="card-category">Chains & Collars</span>
+            <h4 class="card-title">Heirloom Link Chain</h4>
+            <p class="card-caption">Modern weight balanced with enduring, timeless polish.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card">
+          <div class="card-img-wrapper">
+            <span class="card-badge">Artisan Accent</span>
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Pearl Drop Statement Earrings" loading="lazy" />
+          </div>
+          <div class="card-info">
+            <span class="card-category">Baroque & Pearls</span>
+            <h4 class="card-title">Organic Pearl Droplets</h4>
+            <p class="card-caption">Natural forms meeting crisp contemporary brass craftsmanship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Pillars / Why Partner -->
     <section class="pillars">
       <div class="pillar-card">
-        <h3>Design-First Discovery</h3>
-        <p>A clutter-free, elevated marketplace that respects your brand story and places your craftsmanship front and center.</p>
+        <h3>Design-Led Curation</h3>
+        <p>A quiet, uncluttered platform that honors the creative identity and craftsmanship of independent designers.</p>
       </div>
       <div class="pillar-card">
-        <h3>Multi-Vendor Support</h3>
-        <p>Seamless catalog onboarding, transparent order management, and multi-channel marketing campaigns.</p>
+        <h3>Multi-Vendor Infrastructure</h3>
+        <p>Effortless catalog management, centralized checkout, and multi-brand editorial campaigns.</p>
       </div>
       <div class="pillar-card">
-        <h3>Intentional Audience</h3>
-        <p>Direct exposure to an audience seeking personal, expressive, and quality everyday-to-occasion pieces.</p>
+        <h3>Audience With Intention</h3>
+        <p>Direct connection to style-conscious shoppers looking for authentic pieces rather than algorithmic noise.</p>
       </div>
     </section>
 
-    <!-- Direct Onboarding / Inquiry Form -->
-    <section class="form-wrapper">
+    <!-- Designer Onboarding Application Section -->
+    <section class="form-wrapper" id="designer-application">
       <div class="form-header">
-        <h2>Submit Your Brand for Review</h2>
-        <p>Tell us about your label. Our curation team reviews submissions within 48 hours.</p>
+        <span class="section-subtitle">Vendor & Designer Inquiries</span>
+        <h2>Apply to Join the Debut Roster</h2>
+        <p>We are actively onboarding independent designers, jewelers, and studios before our public launch.</p>
       </div>
 
-      <!-- Replace action with your Formspree, Basin, or Google Forms endpoint -->
       <form action="https://formspree.io/f/your-form-id" method="POST" class="grid-form">
         <div class="form-group">
-          <label for="brandName">Brand / Studio Name *</label>
-          <input type="text" id="brandName" name="brandName" required placeholder="e.g. Atelier Studio" />
+          <label for="brandName">Studio / Brand Name *</label>
+          <input type="text" id="brandName" name="brandName" required placeholder="e.g. Atelier Aurelia" />
         </div>
 
         <div class="form-group">
           <label for="designerName">Contact Person *</label>
-          <input type="text" id="designerName" name="designerName" required placeholder="Full Name" />
+          <input type="text" id="designerName" name="designerName" required placeholder="Full name" />
         </div>
 
         <div class="form-group">
-          <label for="email">Work Email *</label>
-          <input type="email" id="email" name="email" required placeholder="hello@yourbrand.com" />
+          <label for="email">Business Email *</label>
+          <input type="email" id="email" name="email" required placeholder="contact@yourbrand.com" />
         </div>
 
         <div class="form-group">
@@ -327,37 +708,59 @@
         </div>
 
         <div class="form-group">
-          <label for="catalogLink">Lookbook / Catalog / Website URL</label>
-          <input type="url" id="catalogLink" name="catalogLink" placeholder="https://" />
+          <label for="catalogLink">Website or Lookbook Link</label>
+          <input type="url" id="catalogLink" name="catalogLink" placeholder="https://..." />
         </div>
 
         <div class="form-group">
           <label for="category">Primary Focus *</label>
           <select id="category" name="category" required>
             <option value="" disabled selected>Select category</option>
-            <option value="demi-fine">Demi-Fine Jewellery</option>
+            <option value="demi-fine">Demi-Fine & Silver Jewellery</option>
             <option value="fashion">Contemporary Fashion Jewellery</option>
             <option value="statement">Occasion & Statement Pieces</option>
-            <option value="accessories">Bags & Curated Accessories</option>
+            <option value="accessories">Bags & Curated Lifestyle Accessories</option>
           </select>
         </div>
 
         <div class="form-group full-width">
-          <label for="notes">Brief Brand Note / Tell Us What Makes Your Pieces Unique</label>
-          <textarea id="notes" name="notes" placeholder="Materials used, design philosophy, price tier..."></textarea>
+          <label for="notes">Tell Us About Your Work & Materials</label>
+          <textarea id="notes" name="notes" placeholder="Materials used (brass, 18k vermeil, pearls), price range, and design approach..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Send Partnership Inquiry</button>
+        <button type="submit" class="submit-btn">Submit Brand For Curation Review</button>
       </form>
     </section>
 
+    <!-- VIP Customer Early Access Strip -->
+    <section class="waitlist-strip" id="early-access">
+      <h3>Be Invited to the Private Unveil</h3>
+      <p>Subscribe for exclusive inaugural collection access, private previews, and designer spotlights.</p>
+      
+      <form class="waitlist-form" onsubmit="event.preventDefault(); alert('Thank you! You are on our private pre-launch list.');">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Get Early Access</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>Direct Designer Relations: <a href="mailto:partnerships@editte.com">partnerships@editte.com</a></p>
-      <p>Follow our build process on Instagram: <a href="https://instagram.com" target="_blank" rel="noopener">@editte</a></p>
+      <p>Direct Inquiries: <a href="mailto:partnerships@editte.com">partnerships@editte.com</a></p>
+      <p>Follow our story: <a href="https://instagram.com" target="_blank" rel="noopener">@editte</a></p>
+      <p style="font-size: 0.72rem; color: #877C39; margin-top: 0.5rem;">&copy; 2026 Editte. Where Style Becomes Personal.</p>
     </footer>
   </div>
 
+  <script>
+    // Smooth carousel scroll control
+    function slideCarousel(direction) {
+      const carousel = document.getElementById('jewelCarousel');
+      const cardWidth = carousel.querySelector('.product-card').offsetWidth + 24;
+      carousel.scrollBy({
+        left: direction * cardWidth,
+        behavior: 'smooth'
+      });
+    }
+  </script>
 </body>
 </html>
-
-
