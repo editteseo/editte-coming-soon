@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>editte — Launching Soon | Designer & Partner Inquiries</title>
   
-  <!-- Typography per Brand Guidelines: Primary Serif + Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      /* Brand Color Hierarchy */
       --color-salt: #FAF5F0;
       --color-cacao: #3B1314;
       --color-cacao-muted: #5B282E;
@@ -55,7 +53,7 @@
       position: relative;
     }
 
-    /* Header: Logo aligned directly to the left corner */
+    /* Header: Full Stacked Logo in Left Corner */
     header {
       display: flex;
       justify-content: space-between;
@@ -65,7 +63,7 @@
     }
 
     .brand-logo-left {
-      width: 110px;
+      width: 105px;
       max-width: 32vw;
       display: inline-block;
       text-decoration: none;
@@ -96,7 +94,7 @@
       overflow: hidden;
       margin: 2rem 0 3.5rem;
       background-color: var(--color-cacao);
-      min-height: 380px;
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -111,22 +109,25 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.45;
+      opacity: 0.42;
       filter: saturate(0.85);
     }
 
     .banner-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(59, 19, 20, 0.5) 0%, rgba(59, 19, 20, 0.88) 100%);
+      background: radial-gradient(circle at center, rgba(59, 19, 20, 0.45) 0%, rgba(59, 19, 20, 0.88) 100%);
     }
 
     .banner-content {
       position: relative;
       z-index: 2;
-      padding: 3rem 1.5rem;
+      padding: 3.5rem 1.5rem;
       max-width: 680px;
       color: var(--color-salt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .launch-pill {
@@ -142,7 +143,7 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       font-weight: 600;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
       backdrop-filter: blur(4px);
     }
 
@@ -159,16 +160,18 @@
       50% { opacity: 0.4; transform: scale(0.8); }
     }
 
-    /* Small lowercase brand title under the badge */
-    .banner-brand-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 6vw, 3.8rem);
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--color-salt);
-      text-transform: lowercase;
-      margin-bottom: 0.85rem;
-      line-height: 1.1;
+    /* Exact Brand Wordmark in Banner */
+    .banner-wordmark-container {
+      width: 320px;
+      max-width: 82vw;
+      margin-bottom: 1.5rem;
+    }
+
+    .banner-wordmark-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      fill: var(--color-salt);
     }
 
     .banner-subtitle {
@@ -439,6 +442,18 @@
       text-align: center;
     }
 
+    .footer-brand-mark {
+      width: 70px;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-brand-mark svg {
+      width: 100%;
+      height: auto;
+      fill: var(--color-cacao);
+      opacity: 0.75;
+    }
+
     footer a {
       color: var(--color-cacao);
       text-decoration: none;
@@ -455,22 +470,34 @@
   <div class="architectural-frame"></div>
 
   <div class="container">
-    <!-- Header with Exact Brand Logo in Left Corner -->
+    <!-- Header with Exact Stacked Logo in Left Corner -->
     <header>
       <a href="#" class="brand-logo-left" title="editte">
-        <svg viewBox="0 0 540 320" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 540 380" xmlns="http://www.w3.org/2000/svg">
           <!-- Inverted Monogram 'e' -->
-          <path d="M 270 20 C 310 20 338 42 334 78 C 330 114 286 118 246 118 C 236 118 232 118 230 118 C 232 94 246 72 272 72 C 298 72 308 84 316 84 C 322 84 326 78 326 72 C 326 44 290 32 260 32 C 220 32 198 58 198 90 C 198 126 230 148 280 148 C 330 148 352 118 352 74 C 352 32 316 12 270 12 C 240 12 216 22 204 36 L 214 46 C 224 34 244 20 270 20 Z" />
-          <!-- Custom Serif Wordmark -->
-          <text x="270" y="275" text-anchor="middle" font-family="'Cormorant Garamond', 'Goudy Old Style', Georgia, serif" font-size="110" letter-spacing="10">editte</text>
+          <path d="M 270 24 C 308 24 336 44 332 78 C 328 112 284 116 244 116 C 234 116 230 116 228 116 C 230 92 244 70 270 70 C 296 70 306 82 314 82 C 320 82 324 76 324 70 C 324 44 288 32 258 32 C 218 32 196 58 196 90 C 196 126 228 148 278 148 C 328 148 350 118 350 74 C 350 32 314 14 270 14 C 238 14 214 24 202 38 L 212 48 C 222 36 244 24 270 24 Z" />
+          
+          <!-- Exact Custom Typography: 'editte' -->
+          <!-- 'e' -->
+          <path d="M 62 268 C 62 232 90 206 126 206 C 158 206 182 226 182 258 C 182 264 180 268 174 268 L 84 268 C 86 288 104 300 128 300 C 146 300 160 292 168 284 L 176 292 C 164 306 146 316 122 316 C 84 316 62 292 62 268 Z M 84 256 L 162 256 C 160 236 146 220 126 220 C 104 220 88 236 84 256 Z" />
+          <!-- 'd' -->
+          <path d="M 194 312 L 212 312 L 212 298 C 218 308 232 316 250 316 C 282 316 304 288 304 258 C 304 228 282 206 250 206 C 232 206 218 214 212 224 L 212 172 L 194 178 L 194 312 Z M 212 260 C 212 284 226 300 246 300 C 268 300 284 282 284 258 C 284 234 268 222 246 222 C 226 222 212 238 212 260 Z" />
+          <!-- 'i' -->
+          <path d="M 324 190 A 8 8 0 1 0 324 174 A 8 8 0 1 0 324 190 Z M 316 210 L 332 210 L 332 312 L 316 312 Z" />
+          <!-- 't' 1 -->
+          <path d="M 354 222 L 342 222 L 342 210 L 354 210 L 354 188 L 372 184 L 372 210 L 396 210 L 396 222 L 372 222 L 372 294 C 372 302 376 306 384 306 L 396 306 L 396 316 L 380 316 C 362 316 354 306 354 290 L 354 222 Z" />
+          <!-- 't' 2 -->
+          <path d="M 404 222 L 392 222 L 392 210 L 404 210 L 404 188 L 422 184 L 422 210 L 446 210 L 446 222 L 422 222 L 422 294 C 422 302 426 306 434 306 L 446 306 L 446 316 L 430 316 C 412 316 404 306 404 290 L 404 222 Z" />
+          <!-- flipped 'e' -->
+          <path d="M 488 268 C 488 232 460 206 424 206 C 392 206 368 226 368 258 C 368 264 370 268 376 268 L 466 268 C 464 288 446 300 422 300 C 404 300 390 292 382 284 L 374 292 C 386 306 404 316 428 316 C 466 316 488 292 488 268 Z M 466 256 L 388 256 C 390 236 404 220 424 220 C 446 220 462 236 466 256 Z" transform="translate(934, 0) scale(-1, 1)" />
         </svg>
       </a>
       <div class="badge-status">Curation Underway</div>
     </header>
 
-    <!-- Top Highlight: Launching Soon Campaign Banner -->
+    <!-- Top Highlight: Launching Soon Campaign Banner with Exact Brand Typography -->
     <section class="hero-campaign-banner">
-      <img class="banner-bg-img" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80" alt="Editte Jewellery Editorial Backdrop" />
+      <img class="banner-bg-img" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80" alt="editte Jewellery Editorial Backdrop" />
       <div class="banner-overlay"></div>
       
       <div class="banner-content">
@@ -479,7 +506,24 @@
           Official Launching Soon
         </div>
 
-        <h1 class="banner-brand-title">editte</h1>
+        <!-- Wordmark rendered in exact logo typography -->
+        <div class="banner-wordmark-container" title="editte">
+          <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- 'e' -->
+            <path d="M 32 108 C 32 72 60 46 96 46 C 128 46 152 66 152 98 C 152 104 150 108 144 108 L 54 108 C 56 128 74 140 98 140 C 116 140 130 132 138 124 L 146 132 C 134 146 116 156 92 156 C 54 156 32 132 32 108 Z M 54 96 L 132 96 C 130 76 116 60 96 60 C 74 60 58 76 54 96 Z" />
+            <!-- 'd' -->
+            <path d="M 164 152 L 182 152 L 182 138 C 188 148 202 156 220 156 C 252 156 274 128 274 98 C 274 68 252 46 220 46 C 202 46 188 54 182 64 L 182 12 L 164 18 L 164 152 Z M 182 100 C 182 124 196 140 216 140 C 238 140 254 122 254 98 C 254 74 238 62 216 62 C 196 62 182 78 182 100 Z" />
+            <!-- 'i' -->
+            <path d="M 294 30 A 8 8 0 1 0 294 14 A 8 8 0 1 0 294 30 Z M 286 50 L 302 50 L 302 152 L 286 152 Z" />
+            <!-- 't' 1 -->
+            <path d="M 324 62 L 312 62 L 312 50 L 324 50 L 324 28 L 342 24 L 342 50 L 366 50 L 366 62 L 342 62 L 342 134 C 342 142 346 146 354 146 L 366 146 L 366 156 L 350 156 C 332 156 324 146 324 130 L 324 62 Z" />
+            <!-- 't' 2 -->
+            <path d="M 374 62 L 362 62 L 362 50 L 374 50 L 374 28 L 392 24 L 392 50 L 416 50 L 416 62 L 392 62 L 392 134 C 392 142 396 146 404 146 L 416 146 L 416 156 L 400 156 C 382 156 374 146 374 130 L 374 62 Z" />
+            <!-- flipped 'e' -->
+            <path d="M 458 108 C 458 72 430 46 394 46 C 362 46 338 66 338 98 C 338 104 340 108 346 108 L 436 108 C 434 128 416 140 392 140 C 374 140 360 132 352 124 L 344 132 C 356 146 374 156 398 156 C 436 156 458 132 458 108 Z M 436 96 L 358 96 C 360 76 374 60 394 60 C 416 60 432 76 436 96 Z" transform="translate(874, 0) scale(-1, 1)" />
+          </svg>
+        </div>
+
         <p class="banner-subtitle">
           An elevated multi-vendor marketplace dedicated to design-led jewellery, accessories, and emerging studio craftsmanship.
         </p>
@@ -491,7 +535,7 @@
       </div>
     </section>
 
-    <!-- Why Partner With Editte -->
+    <!-- Why Partner With editte -->
     <section class="pillars">
       <div class="pillar-card">
         <h3>Design-Led Curation</h3>
@@ -563,6 +607,644 @@
 
     <!-- Footer -->
     <footer>
+      <div class="footer-brand-mark">
+        <svg viewBox="0 0 540 380" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 270 24 C 308 24 336 44 332 78 C 328 112 284 116 244 116 C 234 116 230 116 228 116 C 230 92 244 70 270 70 C 296 70 306 82 314 82 C 320 82 324 76 324 70 C 324 44 288 32 258 32 C 218 32 196 58 196 90 C 196 126 228 148 278 148 C 328 148 350 118 350 74 C 350 32 314 14 270 14 C 238 14 214 24 202 38 L 212 48 C 222 36 244 24 270 24 Z" />
+          <path d="M 62 268 C 62 232 90 206 126 206 C 158 206 182 226 182 258 C 182 264 180 268 174 268 L 84 268 C 86 288 104 300 128 300 C 146 300 160 292 168 284 L 176 292 C 164 306 146 316 122 316 C 84 316 62 292 62 268 Z M 84 256 L 162 256 C 160 236 146 220 126 220 C 104 220 88 236 84 256 Z" />
+          <path d="M 194 312 L 212 312 L 212 298 C 218 308 232 316 250 316 C 282 316 304 288 304 258 C 304 228 282 206 250 206 C 232 206 218 214 212 224 L 212 172 L 194 178 L 194 312 Z M 212 260 C 212 284 226 300 246 300 C 268 300 284 282 284 258 C 284 234 268 222 246 222 C 226 222 212 238 212 260 Z" />
+          <path d="M 324 190 A 8 8 0 1 0 324 174 A 8 8 0 1 0 324 190 Z M 316 210 L 332 210 L 332 312 L 316 312 Z" />
+          <path d="M 354 222 L 342 222 L 342 210 L 354 210 L 354 188 L 372 184 L 372 210 L 396 210 L 396 222 L 372 222 L 372 294 C 372 302 376 306 384 306 L 396 306 L 396 316 L 380 316 C 362 316 354 306 354 290 L 354 222 Z" />
+          <path d="M 404 222 L 392 222 L 392 210 L 404 210 L 404 188 L 422 184 L 422 210 L 446 210 L 446 222 L 422 222 L 422 294 C 422 302 426 306 434 306 L 446 306 L 446 316 L 430 316 C 412 316 404 306 404 290 L 404 222 Z" />
+          <path d="M 488 268 C 488 232 460 206 424 206 C 392 206 368 226 368 258 C 368 264 370 268 376 268 L 466 268 C 464 288 446 300 422 300 C 404 300 390 292 382 284 L 374 292 C 386 306 404 316 428 316 C 466 316 488 292 488 268 Z M 466 256 L 388 256 C 390 236 404 220 424 220 C 446 220 462 236 466 256 Z" transform="translate(934, 0) scale(-1, 1)" />
+        </svg>
+      </div>
+      <p>Direct Inquiries: <a href="mailto:hello@shopeditte.com">hello@shopeditte.com</a></p>
+      <p>Follow our story: <a href="https://www.instagram.com/shopeditte" target="_blank" rel="noopener">@shopeditte</a></p>
+      <p style="font-size: 0.72rem; color: #877C39; margin-top: 0.5rem;">&copy; 2026 editte. Where Style Becomes Personal.</p>
+    </footer>
+  </div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>editte — Launching Soon | Designer & Partner Inquiries</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-salt: #FAF5F0;
+      --color-cacao: #3B1314;
+      --color-cacao-muted: #5B282E;
+      --color-sage: #B4AD64;
+      --color-sand: #EFE1C0;
+      --color-white: #FFFFFF;
+      
+      --font-serif: 'Cormorant Garamond', 'Goudy Old Style', Georgia, serif;
+      --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-salt);
+      color: var(--color-cacao);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Architectural Border */
+    .architectural-frame {
+      position: fixed;
+      inset: 12px;
+      border: 1px solid rgba(180, 173, 100, 0.25);
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem 4rem;
+      position: relative;
+    }
+
+    /* Header: Full Stacked Logo in Left Corner */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(59, 19, 20, 0.08);
+    }
+
+    .brand-logo-left {
+      width: 105px;
+      max-width: 32vw;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .brand-logo-left svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      fill: var(--color-cacao);
+    }
+
+    .badge-status {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--color-sand);
+      color: var(--color-cacao);
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    /* Elegant Hero Campaign Banner at the Top */
+    .hero-campaign-banner {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 2rem 0 3.5rem;
+      background-color: var(--color-cacao);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid rgba(180, 173, 100, 0.3);
+      box-shadow: 0 10px 30px rgba(59, 19, 20, 0.12);
+    }
+
+    .banner-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+      filter: saturate(0.85);
+    }
+
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(59, 19, 20, 0.45) 0%, rgba(59, 19, 20, 0.88) 100%);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      padding: 3.5rem 1.5rem;
+      max-width: 680px;
+      color: var(--color-salt);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .launch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(250, 245, 240, 0.15);
+      border: 1px solid var(--color-sage);
+      color: var(--color-salt);
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .launch-pill-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-sage);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Exact Brand Wordmark in Banner */
+    .banner-wordmark-container {
+      width: 320px;
+      max-width: 82vw;
+      margin-bottom: 1.5rem;
+    }
+
+    .banner-wordmark-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      fill: var(--color-salt);
+    }
+
+    .banner-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-sand);
+      font-weight: 300;
+      max-width: 540px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .banner-ctas {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-anchor {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.85rem 1.6rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    .btn-anchor-primary {
+      background: var(--color-salt);
+      color: var(--color-cacao);
+      border: 1px solid var(--color-salt);
+    }
+
+    .btn-anchor-primary:hover {
+      background: var(--color-sage);
+      border-color: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
+    .btn-anchor-secondary {
+      background: transparent;
+      color: var(--color-salt);
+      border: 1px solid rgba(250, 245, 240, 0.4);
+    }
+
+    .btn-anchor-secondary:hover {
+      background: rgba(250, 245, 240, 0.1);
+      border-color: var(--color-salt);
+    }
+
+    /* Value Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 3.5rem 0 4.5rem;
+    }
+
+    .pillar-card {
+      background: var(--color-white);
+      border: 1px solid rgba(59, 19, 20, 0.08);
+      padding: 2.2rem 1.75rem;
+      border-top: 3px solid var(--color-sage);
+    }
+
+    .pillar-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-cacao);
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+
+    .pillar-card p {
+      font-size: 0.85rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* Designer Onboarding Application Form */
+    .form-wrapper {
+      background: var(--color-white);
+      border: 1px solid rgba(59, 19, 20, 0.1);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 6px 30px rgba(59, 19, 20, 0.03);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .form-subtitle {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-sage);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .form-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      color: var(--color-cacao);
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+    }
+
+    .form-header p {
+      font-size: 0.95rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+    }
+
+    .grid-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 720px) {
+      .grid-form {
+        grid-template-columns: 1fr;
+      }
+      .form-wrapper {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: var(--color-cacao);
+    }
+
+    input, textarea {
+      padding: 0.85rem;
+      border: 1px solid rgba(59, 19, 20, 0.2);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      background: var(--color-salt);
+      color: var(--color-cacao);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--color-sage);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 2px rgba(180, 173, 100, 0.18);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 95px;
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border: none;
+      padding: 1.1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
+    /* VIP Early Access Strip */
+    .waitlist-strip {
+      background: var(--color-sand);
+      border: 1px solid rgba(180, 173, 100, 0.4);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    .waitlist-strip h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--color-cacao);
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .waitlist-strip p {
+      font-size: 0.9rem;
+      color: var(--color-cacao-muted);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .waitlist-form {
+      display: flex;
+      max-width: 440px;
+      margin: 0 auto;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 500px) {
+      .waitlist-form {
+        flex-direction: column;
+      }
+    }
+
+    .waitlist-form input {
+      flex: 1;
+      background: #FFFFFF;
+      border: 1px solid rgba(59, 19, 20, 0.2);
+    }
+
+    .waitlist-form button {
+      background: var(--color-cacao);
+      color: var(--color-salt);
+      border: none;
+      padding: 0 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      height: 44px;
+    }
+
+    .waitlist-form button:hover {
+      background: var(--color-sage);
+      color: var(--color-cacao);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(59, 19, 20, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--color-cacao-muted);
+      text-align: center;
+    }
+
+    .footer-brand-mark {
+      width: 70px;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-brand-mark svg {
+      width: 100%;
+      height: auto;
+      fill: var(--color-cacao);
+      opacity: 0.75;
+    }
+
+    footer a {
+      color: var(--color-cacao);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="architectural-frame"></div>
+
+  <div class="container">
+    <!-- Header with Exact Stacked Logo in Left Corner -->
+    <header>
+      <a href="#" class="brand-logo-left" title="editte">
+        <svg viewBox="0 0 540 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Inverted Monogram 'e' -->
+          <path d="M 270 24 C 308 24 336 44 332 78 C 328 112 284 116 244 116 C 234 116 230 116 228 116 C 230 92 244 70 270 70 C 296 70 306 82 314 82 C 320 82 324 76 324 70 C 324 44 288 32 258 32 C 218 32 196 58 196 90 C 196 126 228 148 278 148 C 328 148 350 118 350 74 C 350 32 314 14 270 14 C 238 14 214 24 202 38 L 212 48 C 222 36 244 24 270 24 Z" />
+          
+          <!-- Exact Custom Typography: 'editte' -->
+          <!-- 'e' -->
+          <path d="M 62 268 C 62 232 90 206 126 206 C 158 206 182 226 182 258 C 182 264 180 268 174 268 L 84 268 C 86 288 104 300 128 300 C 146 300 160 292 168 284 L 176 292 C 164 306 146 316 122 316 C 84 316 62 292 62 268 Z M 84 256 L 162 256 C 160 236 146 220 126 220 C 104 220 88 236 84 256 Z" />
+          <!-- 'd' -->
+          <path d="M 194 312 L 212 312 L 212 298 C 218 308 232 316 250 316 C 282 316 304 288 304 258 C 304 228 282 206 250 206 C 232 206 218 214 212 224 L 212 172 L 194 178 L 194 312 Z M 212 260 C 212 284 226 300 246 300 C 268 300 284 282 284 258 C 284 234 268 222 246 222 C 226 222 212 238 212 260 Z" />
+          <!-- 'i' -->
+          <path d="M 324 190 A 8 8 0 1 0 324 174 A 8 8 0 1 0 324 190 Z M 316 210 L 332 210 L 332 312 L 316 312 Z" />
+          <!-- 't' 1 -->
+          <path d="M 354 222 L 342 222 L 342 210 L 354 210 L 354 188 L 372 184 L 372 210 L 396 210 L 396 222 L 372 222 L 372 294 C 372 302 376 306 384 306 L 396 306 L 396 316 L 380 316 C 362 316 354 306 354 290 L 354 222 Z" />
+          <!-- 't' 2 -->
+          <path d="M 404 222 L 392 222 L 392 210 L 404 210 L 404 188 L 422 184 L 422 210 L 446 210 L 446 222 L 422 222 L 422 294 C 422 302 426 306 434 306 L 446 306 L 446 316 L 430 316 C 412 316 404 306 404 290 L 404 222 Z" />
+          <!-- flipped 'e' -->
+          <path d="M 488 268 C 488 232 460 206 424 206 C 392 206 368 226 368 258 C 368 264 370 268 376 268 L 466 268 C 464 288 446 300 422 300 C 404 300 390 292 382 284 L 374 292 C 386 306 404 316 428 316 C 466 316 488 292 488 268 Z M 466 256 L 388 256 C 390 236 404 220 424 220 C 446 220 462 236 466 256 Z" transform="translate(934, 0) scale(-1, 1)" />
+        </svg>
+      </a>
+      <div class="badge-status">Curation Underway</div>
+    </header>
+
+    <!-- Top Highlight: Launching Soon Campaign Banner with Exact Brand Typography -->
+    <section class="hero-campaign-banner">
+      <img class="banner-bg-img" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80" alt="editte Jewellery Editorial Backdrop" />
+      <div class="banner-overlay"></div>
+      
+      <div class="banner-content">
+        <div class="launch-pill">
+          <span class="launch-pill-dot"></span>
+          Official Launching Soon
+        </div>
+
+        <!-- Wordmark rendered in exact logo typography -->
+        <div class="banner-wordmark-container" title="editte">
+          <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- 'e' -->
+            <path d="M 32 108 C 32 72 60 46 96 46 C 128 46 152 66 152 98 C 152 104 150 108 144 108 L 54 108 C 56 128 74 140 98 140 C 116 140 130 132 138 124 L 146 132 C 134 146 116 156 92 156 C 54 156 32 132 32 108 Z M 54 96 L 132 96 C 130 76 116 60 96 60 C 74 60 58 76 54 96 Z" />
+            <!-- 'd' -->
+            <path d="M 164 152 L 182 152 L 182 138 C 188 148 202 156 220 156 C 252 156 274 128 274 98 C 274 68 252 46 220 46 C 202 46 188 54 182 64 L 182 12 L 164 18 L 164 152 Z M 182 100 C 182 124 196 140 216 140 C 238 140 254 122 254 98 C 254 74 238 62 216 62 C 196 62 182 78 182 100 Z" />
+            <!-- 'i' -->
+            <path d="M 294 30 A 8 8 0 1 0 294 14 A 8 8 0 1 0 294 30 Z M 286 50 L 302 50 L 302 152 L 286 152 Z" />
+            <!-- 't' 1 -->
+            <path d="M 324 62 L 312 62 L 312 50 L 324 50 L 324 28 L 342 24 L 342 50 L 366 50 L 366 62 L 342 62 L 342 134 C 342 142 346 146 354 146 L 366 146 L 366 156 L 350 156 C 332 156 324 146 324 130 L 324 62 Z" />
+            <!-- 't' 2 -->
+            <path d="M 374 62 L 362 62 L 362 50 L 374 50 L 374 28 L 392 24 L 392 50 L 416 50 L 416 62 L 392 62 L 392 134 C 392 142 396 146 404 146 L 416 146 L 416 156 L 400 156 C 382 156 374 146 374 130 L 374 62 Z" />
+            <!-- flipped 'e' -->
+            <path d="M 458 108 C 458 72 430 46 394 46 C 362 46 338 66 338 98 C 338 104 340 108 346 108 L 436 108 C 434 128 416 140 392 140 C 374 140 360 132 352 124 L 344 132 C 356 146 374 156 398 156 C 436 156 458 132 458 108 Z M 436 96 L 358 96 C 360 76 374 60 394 60 C 416 60 432 76 436 96 Z" transform="translate(874, 0) scale(-1, 1)" />
+          </svg>
+        </div>
+
+        <p class="banner-subtitle">
+          An elevated multi-vendor marketplace dedicated to design-led jewellery, accessories, and emerging studio craftsmanship.
+        </p>
+
+        <div class="banner-ctas">
+          <a href="#designer-application" class="btn-anchor btn-anchor-primary">Partner With Us &rarr;</a>
+          <a href="#early-access" class="btn-anchor btn-anchor-secondary">Join VIP List</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Partner With editte -->
+    <section class="pillars">
+      <div class="pillar-card">
+        <h3>Design-Led Curation</h3>
+        <p>A quiet, elevated platform that respects the creative identity and craftsmanship of independent designers.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Multi-Vendor Infrastructure</h3>
+        <p>Effortless catalog management, centralized checkout, and multi-brand editorial campaigns.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Audience With Intention</h3>
+        <p>Direct exposure to style-conscious shoppers looking for authentic pieces rather than algorithmic noise.</p>
+      </div>
+    </section>
+
+    <!-- Designer Onboarding Application Section -->
+    <section class="form-wrapper" id="designer-application">
+      <div class="form-header">
+        <span class="form-subtitle">Vendor & Designer Inquiries</span>
+        <h2>Apply to Join the Debut Roster</h2>
+        <p>We are actively onboarding independent designers and studios before our public launch.</p>
+      </div>
+
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="grid-form">
+        <div class="form-group">
+          <label for="brandName">Studio / Brand Name *</label>
+          <input type="text" id="brandName" name="brandName" required placeholder="e.g. Atelier Aurelia" />
+        </div>
+
+        <div class="form-group">
+          <label for="designerName">Contact Person *</label>
+          <input type="text" id="designerName" name="designerName" required placeholder="Full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Business Email *</label>
+          <input type="email" id="email" name="email" required placeholder="contact@yourbrand.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="instagram">Instagram Handle (Optional)</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@yourbrand" />
+        </div>
+
+        <div class="form-group full-width">
+          <label for="catalogLink">Website or Lookbook URL</label>
+          <input type="url" id="catalogLink" name="catalogLink" placeholder="https://..." />
+        </div>
+
+        <div class="form-group full-width">
+          <label for="notes">Tell Us About Your Work & Materials</label>
+          <textarea id="notes" name="notes" placeholder="Materials used (demi-fine, silver, brass, pearls), price range, and design approach..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Brand For Curation Review</button>
+      </form>
+    </section>
+
+    <!-- VIP Customer Early Access Strip -->
+    <section class="waitlist-strip" id="early-access">
+      <h3>Be Invited to the Private Unveil</h3>
+      <p>Subscribe for exclusive inaugural collection access, private previews, and designer spotlights.</p>
+      
+      <form class="waitlist-form" onsubmit="event.preventDefault(); alert('Thank you! You are on our private pre-launch list.');">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Get Early Access</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand-mark">
+        <svg viewBox="0 0 540 380" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 270 24 C 308 24 336 44 332 78 C 328 112 284 116 244 116 C 234 116 230 116 228 116 C 230 92 244 70 270 70 C 296 70 306 82 314 82 C 320 82 324 76 324 70 C 324 44 288 32 258 32 C 218 32 196 58 196 90 C 196 126 228 148 278 148 C 328 148 350 118 350 74 C 350 32 314 14 270 14 C 238 14 214 24 202 38 L 212 48 C 222 36 244 24 270 24 Z" />
+          <path d="M 62 268 C 62 232 90 206 126 206 C 158 206 182 226 182 258 C 182 264 180 268 174 268 L 84 268 C 86 288 104 300 128 300 C 146 300 160 292 168 284 L 176 292 C 164 306 146 316 122 316 C 84 316 62 292 62 268 Z M 84 256 L 162 256 C 160 236 146 220 126 220 C 104 220 88 236 84 256 Z" />
+          <path d="M 194 312 L 212 312 L 212 298 C 218 308 232 316 250 316 C 282 316 304 288 304 258 C 304 228 282 206 250 206 C 232 206 218 214 212 224 L 212 172 L 194 178 L 194 312 Z M 212 260 C 212 284 226 300 246 300 C 268 300 284 282 284 258 C 284 234 268 222 246 222 C 226 222 212 238 212 260 Z" />
+          <path d="M 324 190 A 8 8 0 1 0 324 174 A 8 8 0 1 0 324 190 Z M 316 210 L 332 210 L 332 312 L 316 312 Z" />
+          <path d="M 354 222 L 342 222 L 342 210 L 354 210 L 354 188 L 372 184 L 372 210 L 396 210 L 396 222 L 372 222 L 372 294 C 372 302 376 306 384 306 L 396 306 L 396 316 L 380 316 C 362 316 354 306 354 290 L 354 222 Z" />
+          <path d="M 404 222 L 392 222 L 392 210 L 404 210 L 404 188 L 422 184 L 422 210 L 446 210 L 446 222 L 422 222 L 422 294 C 422 302 426 306 434 306 L 446 306 L 446 316 L 430 316 C 412 316 404 306 404 290 L 404 222 Z" />
+          <path d="M 488 268 C 488 232 460 206 424 206 C 392 206 368 226 368 258 C 368 264 370 268 376 268 L 466 268 C 464 288 446 300 422 300 C 404 300 390 292 382 284 L 374 292 C 386 306 404 316 428 316 C 466 316 488 292 488 268 Z M 466 256 L 388 256 C 390 236 404 220 424 220 C 446 220 462 236 466 256 Z" transform="translate(934, 0) scale(-1, 1)" />
+        </svg>
+      </div>
       <p>Direct Inquiries: <a href="mailto:hello@shopeditte.com">hello@shopeditte.com</a></p>
       <p>Follow our story: <a href="https://www.instagram.com/shopeditte" target="_blank" rel="noopener">@shopeditte</a></p>
       <p style="font-size: 0.72rem; color: #877C39; margin-top: 0.5rem;">&copy; 2026 editte. Where Style Becomes Personal.</p>
