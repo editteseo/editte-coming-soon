@@ -257,47 +257,53 @@
         </div>
 
         <!-- Vendor Submission Form -->
-        <form id="vendorForm" class="space-y-4 sm:space-y-6">
+        <!-- Vendor Submission Form -->
+        <form id="vendorForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4 sm:space-y-6 font-sans">
+          
+          <!-- Web3Forms Access Key & Configuration -->
+          <input type="hidden" name="access_key" value="e5479357-3061-40c4-ae00-29f9a3415e01" />
+          <input type="hidden" name="subject" value="New Editte Designer Partnership Application" />
+          <input type="hidden" name="from_name" value="Editte Designer Portal" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             
             <!-- Brand Name -->
             <div>
               <label for="brandName" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Brand / Studio Name <span class="text-sageDark">*</span></label>
-              <input type="text" id="brandName" required placeholder="e.g. Atelier Vora" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
+              <input type="text" id="brandName" name="Brand_Studio_Name" required placeholder="e.g. Atelier Vora" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
             </div>
 
             <!-- Contact Name -->
             <div>
               <label for="contactName" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Founder / Contact Name <span class="text-sageDark">*</span></label>
-              <input type="text" id="contactName" required placeholder="e.g. Elena Wright" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
+              <input type="text" id="contactName" name="Founder_Contact_Name" required placeholder="e.g. Elena Wright" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
             </div>
 
             <!-- Email -->
             <div>
               <label for="workEmail" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Business Email <span class="text-sageDark">*</span></label>
-              <input type="email" id="workEmail" required placeholder="contact@ateliervora.com" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
+              <input type="email" id="workEmail" name="email" required placeholder="contact@ateliervora.com" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
             </div>
 
             <!-- Instagram -->
             <div>
               <label for="instaHandle" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Instagram Handle <span class="text-sageDark">*</span></label>
-              <input type="text" id="instaHandle" required placeholder="@ateliervora" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
+              <input type="text" id="instaHandle" name="Instagram_Handle" required placeholder="@ateliervora" class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
             </div>
 
             <!-- Portfolio Link -->
-            <div>
+            <div class="sm:col-span-2">
               <label for="lookbookUrl" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Lookbook / Catalog / Website URL</label>
-              <input type="url" id="lookbookUrl" placeholder="https://..." class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
+              <input type="url" id="lookbookUrl" name="Lookbook_URL" placeholder="https://..." class="w-full bg-salt border border-cacao/20 rounded-none px-3.5 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors" />
             </div>
-
-
 
           </div>
 
           <!-- Notes -->
           <div>
-            <label for="brandPhilosophy" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Materials & Design Philosophy</label>
-            <textarea id="brandPhilosophy" rows="3" placeholder="Tell us about your metals, stones, price range, and handcrafted production values..." class="w-full bg-salt border border-cacao/20 rounded-none p-3.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors"></textarea>
+            <label for="brandPhilosophy" class="block text-xs uppercase tracking-wider font-semibold text-cacao mb-1.5">Materials &amp; Design Philosophy</label>
+            <textarea id="brandPhilosophy" name="Materials_Philosophy" rows="3" placeholder="Tell us about your metals, stones, price range, and handcrafted production values..." class="w-full bg-salt border border-cacao/20 rounded-none p-3.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 transition-colors"></textarea>
           </div>
 
           <!-- Submit Button -->
@@ -322,9 +328,15 @@
           Sign up for inaugural collection releases, designer spotlights, and our official opening date.
         </p>
 
-        <form id="waitlistForm" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-          <input type="email" id="waitlistEmail" required placeholder="Enter your email address" class="flex-grow bg-saltLight border border-cacao/20 px-4 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 rounded-none focus:outline-none" />
-          <button type="submit" class="px-6 py-2.5 bg-cacao text-salt text-xs uppercase tracking-widest font-semibold hover:bg-sage hover:text-cacao transition-colors duration-200 whitespace-nowrap">
+        <form id="waitlistForm" action="https://api.web3forms.com/submit" method="POST" class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+          <!-- Web3Forms Access Key & Configuration -->
+          <input type="hidden" name="access_key" value="e5479357-3061-40c4-ae00-29f9a3415e01" />
+          <input type="hidden" name="subject" value="New Customer Waitlist / Circle Subscriber" />
+          <input type="hidden" name="from_name" value="Editte The Circle" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+          <input type="email" id="waitlistEmail" name="email" required placeholder="Enter your email address" class="flex-grow bg-saltLight border border-cacao/20 px-4 py-2.5 text-xs sm:text-sm text-cacao placeholder:text-cacao/40 rounded-none focus:outline-none" />
+          <button type="submit" id="waitlistSubmitBtn" class="px-6 py-2.5 bg-cacao text-salt text-xs uppercase tracking-widest font-semibold hover:bg-sage hover:text-cacao transition-colors duration-200 whitespace-nowrap">
             SUBSCRIBE
           </button>
         </form>
@@ -403,43 +415,88 @@
         }, 5000);
       };
 
-      // 2. VENDOR FORM SUBMISSION HANDLER
+      // 2. VENDOR FORM SUBMISSION HANDLER (Submits to Web3Forms)
       const vendorForm = document.getElementById('vendorForm');
       if (vendorForm) {
-        vendorForm.addEventListener('submit', (e) => {
+        vendorForm.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const brand = document.getElementById('brandName').value;
-          const email = document.getElementById('workEmail').value;
+          const submitBtn = document.getElementById('vendorSubmitBtn');
+          const originalBtnHtml = submitBtn.innerHTML;
 
-          // Dispatch visual notification
-          showToast(
-            'Inquiry Received',
-            `Thank you for introducing ${brand}. Our curatorial team will review your portfolio and reach out at ${email}.`
-          );
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Submitting...</span>';
 
-          vendorForm.reset();
+          const formData = new FormData(vendorForm);
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            });
+
+            if (response.ok) {
+              const brand = document.getElementById('brandName').value;
+              const email = document.getElementById('workEmail').value;
+
+              showToast(
+                'Inquiry Received',
+                `Thank you for introducing ${brand}. Our curatorial team will review your portfolio and reach out at ${email}.`
+              );
+              vendorForm.reset();
+            } else {
+              showToast('Submission Issue', 'Could not send details. Please email partners@shopeditte.com directly.');
+            }
+          } catch (error) {
+            showToast('Network Error', 'Please check your connection and try again.');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
         });
       }
 
-      // 3. VIP CUSTOMER WAITLIST HANDLER
+      // 3. WAITLIST HANDLER (Submits to Web3Forms)
       const waitlistForm = document.getElementById('waitlistForm');
       if (waitlistForm) {
-        waitlistForm.addEventListener('submit', (e) => {
+        waitlistForm.addEventListener('submit', async (e) => {
           e.preventDefault();
-          const email = document.getElementById('waitlistEmail').value;
-          
-          showToast(
-            'VIP Access Confirmed',
-            `You are confirmed on our inaugural private unveil list. Details will arrive at ${email}.`
-          );
+          const submitBtn = waitlistForm.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.textContent;
 
-          // Increment mock subscriber counter
-          const countEl = document.getElementById('subscriberCount');
-          if (countEl) {
-            countEl.textContent = 'Over 241+ collectors & stylists on the waitlist';
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Subscribing...';
+
+          const formData = new FormData(waitlistForm);
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              body: formData
+            });
+
+            if (response.ok) {
+              const email = document.getElementById('waitlistEmail').value;
+              
+              showToast(
+                'Subscription Confirmed',
+                `Thank you for joining. Launch updates will arrive at ${email}.`
+              );
+
+              const countEl = document.getElementById('subscriberCount');
+              if (countEl) {
+                countEl.textContent = 'Over 241+ collectors & stylists in the circle';
+              }
+
+              waitlistForm.reset();
+            } else {
+              showToast('Notice', 'Unable to subscribe right now. Please try again later.');
+            }
+          } catch (error) {
+            showToast('Network Error', 'Please check your connection and try again.');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
           }
-
-          waitlistForm.reset();
         });
       }
     });
